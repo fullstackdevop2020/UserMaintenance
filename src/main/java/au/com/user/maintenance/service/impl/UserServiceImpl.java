@@ -6,6 +6,8 @@ import au.com.user.maintenance.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -19,7 +21,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserEntity getUserById(Long id) {
-        return repository.getOne(id);
+        Optional<UserEntity> entity = repository.findById(id);
+        return entity.isPresent() ? entity.get() : new UserEntity();
     }
 
     @Override

@@ -1,12 +1,11 @@
 package au.com.user.maintenance;
 
-import au.com.user.maintenance.rest.UserMaintenanceConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Import;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@Import( {UserMaintenanceConfig.class})
+@EnableSwagger2
 public class UserMaintenanceApplication {
 
 	public static void main(String[] args) {
